@@ -1,0 +1,46 @@
+# Gitignore for Society360 Monorepo
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backend (Java / Maven)
+.m2_repo/
+backend/target/
+backend/*.log
+backend/.mvn/
+backend/.project
+backend/.classpath
+backend/.settings/
+backend/*.iml
+backend/.idea/
+
+# Frontend (Node / Vite / React)
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+frontend/.env
+frontend/.env.*.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# Mobile (React Native)
+mobile/node_modules/
+mobile/.expo/
+mobile/dist/
+mobile/npm-debug.log*
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Environment & Secrets
+.env
+*.pem
+*.key
