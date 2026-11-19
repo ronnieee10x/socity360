@@ -79,18 +79,18 @@ export const LandingPage: React.FC = () => {
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            to="/login"
+            to="/register-society"
             className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-2"
           >
-            <span>Explore 1-Click Viva Demo</span>
+            <Building2 className="w-4 h-4 text-white" />
+            <span>Onboard Your Society</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
-            to="/register-society"
+            to="/login"
             className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-bold text-sm transition flex items-center justify-center gap-2"
           >
-            <Building2 className="w-4 h-4 text-emerald-400" />
-            <span>Onboard Your Society</span>
+            <span>Sign In</span>
           </Link>
         </div>
 
@@ -232,11 +232,11 @@ export const LandingPage: React.FC = () => {
               <p className="text-xs text-slate-400 mt-2">Mobile-friendly task queue: update ticket status, upload resolution notes, and complete work orders.</p>
             </div>
             <div className="p-5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex flex-col justify-center text-center">
-              <Sparkles className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
-              <h4 className="text-sm font-bold text-emerald-400">1-Click Role Switcher</h4>
-              <p className="text-[11px] text-slate-300 mt-1">Experience all 7 roles instantly during viva evaluation.</p>
-              <Link to="/login" className="mt-3 text-xs font-bold text-white underline hover:text-emerald-300">
-                Launch Demo Login $\to$
+              <Building2 className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
+              <h4 className="text-sm font-bold text-emerald-400">Unified Ecosystem</h4>
+              <p className="text-[11px] text-slate-300 mt-1">Seamless collaboration across all 7 residential stakeholders.</p>
+              <Link to="/register-society" className="mt-3 text-xs font-bold text-white underline hover:text-emerald-300">
+                Onboard Your Society &rarr;
               </Link>
             </div>
           </div>
@@ -323,7 +323,7 @@ export const LandingPage: React.FC = () => {
             to="/login"
             className="px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-bold text-sm transition"
           >
-            Explore Live Demo
+            Sign In
           </Link>
         </div>
       </section>
