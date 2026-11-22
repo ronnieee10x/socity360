@@ -395,12 +395,12 @@ This project was developed by the engineering team below. Feel free to connect w
 
 | Contributor | Role & Specialization | GitHub Profile |
 |:---:|:---:|:---:|
-| **Rohan Sonwane** | Full-Stack Architect & Backend Lead | [@ronnieee10x](https://github.com/ronnieee10x) |
-| **Teammate 2** | Frontend Engineer & UI/UX Design | [@teammate2](https://github.com/teammate2) |
-| **Teammate 3** | Database Architect & DevOps | [@teammate3](https://github.com/teammate3) |
-| **Teammate 4** | QA Engineer & Cybersecurity | [@teammate4](https://github.com/teammate4) |
-
-*(Update the table above with your teammates' actual names, roles, and GitHub handles).*
+| **Rohan Sonwane** | Project Lead, Full-Stack Architect, Backend & Cybersecurity | [@ronnieee10x](https://github.com/ronnieee10x) |
+| **Mrunmayee Jadhav** | Frontend Lead, UI/UX Design, Integration & Cybersecurity | [@mrunmayee2113](https://github.com/mrunmayee2113) |
+| **Teammate 3** | Manual Testing & Bug Reporting | yet to add |
+| **Teammate 4** | Technical Documentation & Report | yet to add |
+| **Teammate 5** | Requirement Gathering & Research | yet to add |
+| **Teammate 6** | Presentation & Project Coordination | yet to add |
 
 ---
 
