@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+if [ -z "$JAVA_HOME" ]; then
+    if command -v java >/dev/null 2>&1; then
+        JAVA_EXEC="$(which java)"
+        if command -v readlink >/dev/null 2>&1; then
+            JAVA_EXEC="$(readlink -f "$JAVA_EXEC")"
+        fi
+        export JAVA_HOME="$(dirname "$(dirname "$JAVA_EXEC")")"
+    fi
+fi
+if [ -x "$DIR/apache-maven-3.9.6/bin/mvn" ]; then
+    chmod +x "$DIR/apache-maven-3.9.6/bin/mvn" 2>/dev/null
+    exec "$DIR/apache-maven-3.9.6/bin/mvn" -Dmaven.repo.local="$DIR/../.m2_repo" "$@"
+else
+    exec mvn -Dmaven.repo.local="$DIR/../.m2_repo" "$@"
+fi

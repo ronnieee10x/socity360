@@ -2,14 +2,32 @@
 
 # Operating System Files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 desktop.ini
 
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+
 # Backend (Java / Maven)
+target/
+**/target/
+*.class
+*.log
 .m2_repo/
-backend/target/
+.mvn/
+**/.mvn/
 backend/*.log
-backend/.mvn/
 backend/.project
 backend/.classpath
 backend/.settings/
@@ -17,30 +35,38 @@ backend/*.iml
 backend/.idea/
 
 # Frontend (Node / Vite / React)
-frontend/node_modules/
-frontend/dist/
-frontend/dist-ssr/
-frontend/*.local
-frontend/.env
-frontend/.env.*.local
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+dist-ssr/
+*.local
+*.tsbuildinfo
 frontend/npm-debug.log*
 frontend/yarn-debug.log*
 frontend/yarn-error.log*
 frontend/pnpm-debug.log*
 
-# Mobile (React Native)
+# Uploads & Temporary Files
+uploads/
+**/uploads/
+temp/
+tmp/
+
+# Mobile (React Native / Expo)
 mobile/node_modules/
 mobile/.expo/
 mobile/dist/
-mobile/npm-debug.log*
 
-# IDEs & Editors
+# IDEs & Code Editors
 .vscode/
+**/.vscode/
 .idea/
+**/.idea/
 *.sublime-project
 *.sublime-workspace
-
-# Environment & Secrets
-.env
-*.pem
-*.key
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

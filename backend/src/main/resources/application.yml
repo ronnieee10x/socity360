@@ -15,11 +15,11 @@ spring:
 
 society360:
   jwt:
-    secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
-    access-token-expiration-ms: 3600000 # 1 hour
-    refresh-token-expiration-ms: 604800000 # 7 days
+    secret: ${JWT_SECRET:${SOCIETY360_JWT_SECRET:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}}
+    access-token-expiration-ms: ${JWT_ACCESS_EXPIRATION_MS:3600000} # 1 hour
+    refresh-token-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS:604800000} # 7 days
   cors:
-    allowed-origins: "http://localhost:3000,http://localhost:5173,http://127.0.0.1:3000"
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:5173,http://127.0.0.1:3000}
   superadmin:
     email: ${SUPERADMIN_EMAIL:superadmin@society360.com}
     password: ${SUPERADMIN_PASSWORD:Admin@12345}
@@ -64,7 +64,7 @@ spring:
     activate:
       on-profile: prod
   datasource:
-    url: jdbc:postgresql://localhost:5432/society360_db
+    url: ${SPRING_DATASOURCE_URL:${DB_URL:jdbc:postgresql://localhost:5432/society360_db}}
     driverClassName: org.postgresql.Driver
     username: ${DB_USERNAME:society360_user}
     password: ${DB_PASSWORD:society360_password}
