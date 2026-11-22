@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/notices")
+@RequestMapping("/api/v1/notices")
 @Tag(name = "Notice & Circular Board", description = "Endpoints for broadcasting general notices, emergency alerts, and meeting agendas")
 public class NoticeController {
 

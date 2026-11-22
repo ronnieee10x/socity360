@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/complaints")
+@RequestMapping("/api/v1/complaints")
 @Tag(name = "Complaint & Maintenance Management", description = "Endpoints for raising complaints, assigning staff, and tracking work orders")
 public class ComplaintController {
 

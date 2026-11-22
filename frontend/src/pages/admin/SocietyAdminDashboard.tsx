@@ -73,8 +73,8 @@ export const SocietyAdminDashboard: React.FC = () => {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
             Tenant Workspace
           </div>
-          <h2 className="text-xl font-bold tracking-tight">{user?.societyName || 'Greenfield Heights'}</h2>
-          <p className="text-slate-400 text-xs mt-1">Tenant Code: <span className="font-mono text-emerald-400">{user?.societyCode || 'SOC-GREENFIELD'}</span></p>
+          <h2 className="text-xl font-bold tracking-tight">{user?.societyName || 'Residential Society'}</h2>
+          <p className="text-slate-400 text-xs mt-1">Tenant Code: <span className="font-mono text-emerald-400">{user?.societyCode || 'ACTIVE'}</span></p>
         </div>
 
         <div className="flex gap-2">

@@ -1,9 +1,12 @@
 package com.society360.security;
 
+import com.society360.domain.auth.Role;
 import com.society360.domain.auth.UserAccount;
 import com.society360.domain.facility.Facility;
 import com.society360.domain.facility.FacilityBooking;
+import com.society360.domain.property.Building;
 import com.society360.domain.property.Flat;
+import com.society360.domain.property.Wing;
 import com.society360.domain.society.Society;
 import com.society360.repository.*;
 import org.junit.jupiter.api.AfterEach;
@@ -32,6 +35,12 @@ public class MultiTenantIsolationTest {
     private SocietyRepository societyRepository;
 
     @Autowired
+    private BuildingRepository buildingRepository;
+
+    @Autowired
+    private WingRepository wingRepository;
+
+    @Autowired
     private FlatRepository flatRepository;
 
     @Autowired
@@ -50,18 +59,63 @@ public class MultiTenantIsolationTest {
 
     @BeforeEach
     void setUp() {
-        societyA = societyRepository.findByCode("SOC-GREENFIELD")
-                .orElseThrow(() -> new IllegalStateException("Seeded Society A (SOC-GREENFIELD) not found"));
+        // 1. Create Society A and test property hierarchy
+        societyA = new Society(
+                "TEST-SOC-A",
+                "Test Alpha Heights",
+                "REG-TEST-A-001",
+                "100 Alpha Boulevard",
+                "Mumbai",
+                "Maharashtra",
+                "400001"
+        );
+        societyA = societyRepository.save(societyA);
 
-        societyB = societyRepository.findByCode("SOC-SKYLINE")
-                .orElseThrow(() -> new IllegalStateException("Seeded Society B (SOC-SKYLINE) not found"));
+        Building buildingA = new Building("Tower Alpha", 10, "Residential tower");
+        buildingA.setSocietyId(societyA.getId());
+        buildingA = buildingRepository.save(buildingA);
 
-        residentA = userRepository.findByEmail("owner@greenfield.com")
-                .orElseThrow(() -> new IllegalStateException("Seeded resident owner@greenfield.com not found"));
+        Wing wingA = new Wing(buildingA.getId(), "Wing A1");
+        wingA.setSocietyId(societyA.getId());
+        wingA = wingRepository.save(wingA);
 
-        List<Flat> flatsA = flatRepository.findAllBySocietyId(societyA.getId());
-        assertFalse(flatsA.isEmpty(), "Society A flats should exist");
-        flatA = flatsA.get(0);
+        flatA = new Flat(buildingA.getId(), wingA.getId(), "A-101", 1, "2BHK", new BigDecimal("1100.00"));
+        flatA.setSocietyId(societyA.getId());
+        flatA = flatRepository.save(flatA);
+
+        residentA = new UserAccount(
+                societyA.getId(),
+                "Alpha Resident",
+                "residentA@test.com",
+                "+91 99000 00001",
+                "hashedpassword",
+                Role.FLAT_OWNER
+        );
+        residentA = userRepository.save(residentA);
+
+        // 2. Create Society B and test property hierarchy
+        societyB = new Society(
+                "TEST-SOC-B",
+                "Test Beta Enclave",
+                "REG-TEST-B-002",
+                "200 Beta Road",
+                "Pune",
+                "Maharashtra",
+                "411001"
+        );
+        societyB = societyRepository.save(societyB);
+
+        Building buildingB = new Building("Tower Beta", 10, "Residential tower");
+        buildingB.setSocietyId(societyB.getId());
+        buildingB = buildingRepository.save(buildingB);
+
+        Wing wingB = new Wing(buildingB.getId(), "Wing B1");
+        wingB.setSocietyId(societyB.getId());
+        wingB = wingRepository.save(wingB);
+
+        Flat flatB = new Flat(buildingB.getId(), wingB.getId(), "B-201", 2, "3BHK", new BigDecimal("1400.00"));
+        flatB.setSocietyId(societyB.getId());
+        flatRepository.save(flatB);
     }
 
     @AfterEach

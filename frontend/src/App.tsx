@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider } from './context/AuthContext';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { LoginPage } from './pages/auth/LoginPage';
+import { RegisterPage } from './pages/auth/RegisterPage';
 import { LandingPage } from './pages/public/LandingPage';
 import { SocietyRegistrationPage } from './pages/public/SocietyRegistrationPage';
 import { ProtectedRoute } from './routes/ProtectedRoute';
@@ -67,6 +68,7 @@ function App() {
             <Route path="/" element={<Navigate to="/landing" replace />} />
             <Route path="/landing" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
             <Route path="/register-society" element={<SocietyRegistrationPage />} />
 
             {/* Platform Super Admin Routes */}

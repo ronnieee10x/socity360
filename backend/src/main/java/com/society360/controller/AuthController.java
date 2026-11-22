@@ -5,7 +5,6 @@ import com.society360.dto.request.RefreshTokenRequest;
 import com.society360.dto.request.RegisterRequest;
 import com.society360.dto.response.ApiResponse;
 import com.society360.dto.response.AuthResponse;
-import com.society360.dto.response.DemoAccountDto;
 import com.society360.dto.response.UserDto;
 import com.society360.service.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -64,12 +63,5 @@ public class AuthController {
     public ResponseEntity<ApiResponse<UserDto>> getCurrentUser() {
         UserDto user = authService.getCurrentUser();
         return ResponseEntity.ok(ApiResponse.success(user));
-    }
-
-    @GetMapping("/demo-accounts")
-    @Operation(summary = "Get pre-seeded demo accounts across all 7 roles for instant viva demonstration")
-    public ResponseEntity<ApiResponse<List<DemoAccountDto>>> getDemoAccounts() {
-        List<DemoAccountDto> accounts = authService.getDemoAccounts();
-        return ResponseEntity.ok(ApiResponse.success(accounts));
     }
 }

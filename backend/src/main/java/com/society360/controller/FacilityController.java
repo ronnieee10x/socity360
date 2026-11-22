@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/facilities")
+@RequestMapping("/api/v1/facilities")
 @Tag(name = "Facility & Amenity Management", description = "Endpoints for clubhouse, pool, sports courts booking with anti-double-booking concurrency control")
 public class FacilityController {
 

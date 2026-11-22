@@ -20,7 +20,8 @@ public class PaymentReceiptDto {
     private String paymentStatus;
     private Instant paidAt;
 
-    public PaymentReceiptDto() {}
+    public PaymentReceiptDto() {
+    }
 
     public String getReceiptNumber() {
         return receiptNumber;

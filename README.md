@@ -124,23 +124,21 @@ society360/
 
 ---
 
-## Demo Accounts & Evaluation Credentials Matrix
+## Initial Super Admin Bootstrap & Access
 
-For viva defense, college presentations, and testing, the application initializes **two complete independent residential societies** (`Greenfield Heights` and `Skyline Residency`) with pre-seeded buildings, wings, flats, tickets, invoices, and demo accounts for all 7 roles.
+On fresh database initialization, the platform automatically provisions a single initial **Platform Super Administrator** account configured via environment variables or `application.yml`:
 
-All pre-seeded demo accounts share the uniform password: **`Password@123`**
-
-| Role | Email | Society / Workspace | Scope & Privileges |
+| Attribute | Default Value | Environment Variable Override | Privileges |
 | :--- | :--- | :--- | :--- |
-| **PLATFORM_SUPER_ADMIN** | `superadmin@society360.com` | *Platform-Wide* | Full cross-tenant governance, approve new societies, platform analytics, audit trail. |
-| **SOCIETY_ADMIN** | `admin@greenfield.com` | Greenfield Heights | Society workspace configuration, property hierarchy, resident KYC approval, staff management. |
-| **COMMITTEE_MEMBER** | `treasurer@greenfield.com` | Greenfield Heights | Budget approvals, maintenance oversight, society broadcast notices, audit access. |
-| **FLAT_OWNER** | `owner@greenfield.com` | Greenfield Heights (A-101) | Ownership dues, visitor pre-approvals, facility bookings, voting rights. |
-| **TENANT** | `tenant@greenfield.com` | Greenfield Heights (B-202) | Flat occupancy, guest passes, maintenance requests, amenity bookings. |
-| **SECURITY_GUARD** | `guard@greenfield.com` | Greenfield Heights (Main Gate) | Gate-pass check-in/out, anti-duplication visitor logs, emergency protocol. |
-| **MAINTENANCE_STAFF** | `electrician@greenfield.com` | Greenfield Heights (Facilities) | Assigned maintenance ticket resolution, SLA status transition, work logs. |
+| **Email** | `superadmin@society360.com` | `SUPERADMIN_EMAIL` | Global Platform Operator |
+| **Password** | `Admin@12345` | `SUPERADMIN_PASSWORD` | Full cross-tenant governance, approve new societies, platform analytics, audit trail |
+| **Name** | `Platform Super Administrator` | `SUPERADMIN_NAME` | Root administrator identity |
 
-> **Pro Tip for Live Demos:** The web login screen (`/login`) includes a **"1-Click Demo Login"** bar with role pills. Clicking any role instantly authenticates that user and redirects to their dedicated dashboard without typing credentials.
+### Real Production Onboarding Lifecycle
+1. **Platform Super Admin Login:** Sign in using the Super Admin credentials above at `/login`.
+2. **Society Onboarding:** Prospective housing societies apply via the public form at `/register-society`.
+3. **Approval & Workspace Provisioning:** The Super Admin reviews documentation and approves the society, automatically generating its isolated workspace and activating the Society Admin account.
+4. **Resident Sign-Up & KYC:** Residents create accounts at `/register` and submit flat join requests for administrative approval.
 
 ---
 
@@ -148,7 +146,7 @@ All pre-seeded demo accounts share the uniform password: **`Password@123`**
 
 ### Option A: Local Development (Fastest — Zero-Config H2 In-Memory)
 
-The backend defaults to the `dev` profile, running an in-memory PostgreSQL-compatible H2 database with automatic schema creation and demo data seeding.
+The backend defaults to the `dev` profile, running an in-memory PostgreSQL-compatible H2 database with automatic schema creation and initial Super Admin bootstrap.
 
 #### 1. Start the Java Spring Boot Backend
 ```bash

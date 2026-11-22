@@ -1,6 +1,5 @@
 import React from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { RoleSwitcher } from './RoleSwitcher';
 import { Building2, LogOut, ShieldCheck, UserCircle } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -31,9 +30,6 @@ export const Navbar: React.FC = () => {
       </div>
 
       <div className="flex items-center gap-3">
-        {/* Viva Demo Role Switcher */}
-        <RoleSwitcher />
-
         {/* User Info & Role Badge */}
         {user && (
           <div className="flex items-center gap-3 pl-3 border-l border-slate-200">

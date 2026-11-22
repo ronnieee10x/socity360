@@ -129,7 +129,7 @@ export const SocietyRegistrationPage: React.FC = () => {
               to="/login"
               className="flex-1 py-3 px-4 bg-emerald-500 hover:bg-emerald-600 font-bold rounded-xl text-sm transition"
             >
-              Go to Login / Demo
+              Go to Login
             </Link>
             <Link
               to="/landing"
@@ -201,7 +201,7 @@ export const SocietyRegistrationPage: React.FC = () => {
                     name="societyName"
                     value={formData.societyName}
                     onChange={handleChange}
-                    placeholder="e.g. Greenfield Heights Co-op Housing Society"
+                    placeholder="e.g. Sunrise Park Co-op Housing Society"
                     className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-sm text-slate-100 placeholder-slate-600 focus:border-emerald-500 focus:outline-none"
                   />
                 </div>

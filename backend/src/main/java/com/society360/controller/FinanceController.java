@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/finance")
+@RequestMapping("/api/v1/finance")
 @Tag(name = "Finance & Invoicing", description = "Endpoints for maintenance dues generation, ledger management, simulated online payments, and digital receipts")
 public class FinanceController {
 

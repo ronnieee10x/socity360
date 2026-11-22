@@ -8,7 +8,6 @@ import com.society360.dto.request.LoginRequest;
 import com.society360.dto.request.RefreshTokenRequest;
 import com.society360.dto.request.RegisterRequest;
 import com.society360.dto.response.AuthResponse;
-import com.society360.dto.response.DemoAccountDto;
 import com.society360.dto.response.UserDto;
 import com.society360.exception.BadRequestException;
 import com.society360.exception.DuplicateResourceException;
@@ -188,68 +187,5 @@ public class AuthServiceImpl implements AuthService {
         }
 
         return new UserDto(user, societyName, societyCode);
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public List<DemoAccountDto> getDemoAccounts() {
-        List<DemoAccountDto> accounts = new ArrayList<>();
-        accounts.add(new DemoAccountDto(
-                "Platform Super Admin",
-                "superadmin@society360.io",
-                "Password@123",
-                Role.PLATFORM_SUPER_ADMIN,
-                "Global Platform",
-                "Full SaaS governance: approve societies, suspend tenants, global audit logs"
-        ));
-        accounts.add(new DemoAccountDto(
-                "Society Admin (President)",
-                "admin@greenfield.com",
-                "Password@123",
-                Role.SOCIETY_ADMIN,
-                "Greenfield Heights",
-                "Manage buildings, wings, flats, resident verifications, billing & staff"
-        ));
-        accounts.add(new DemoAccountDto(
-                "Committee Member (Treasurer)",
-                "treasurer@greenfield.com",
-                "Password@123",
-                Role.COMMITTEE_MEMBER,
-                "Greenfield Heights",
-                "Review financial collections, outstanding dues, audit records & approvals"
-        ));
-        accounts.add(new DemoAccountDto(
-                "Flat Owner (Resident)",
-                "owner@greenfield.com",
-                "Password@123",
-                Role.FLAT_OWNER,
-                "Greenfield Heights (Flat A-502)",
-                "Pay maintenance bills, pre-approve visitors, raise complaints, book amenities"
-        ));
-        accounts.add(new DemoAccountDto(
-                "Resident Tenant",
-                "tenant@greenfield.com",
-                "Password@123",
-                Role.TENANT,
-                "Greenfield Heights (Flat B-201)",
-                "Approve visitors at gate, submit maintenance tickets, view notices"
-        ));
-        accounts.add(new DemoAccountDto(
-                "Security Guard (Main Gate)",
-                "guard@greenfield.com",
-                "Password@123",
-                Role.SECURITY_GUARD,
-                "Greenfield Heights Gate 1",
-                "Log visitor entry/exit, verify pre-approved PINs, deliveries check-in"
-        ));
-        accounts.add(new DemoAccountDto(
-                "Maintenance Technician",
-                "staff@greenfield.com",
-                "Password@123",
-                Role.MAINTENANCE_STAFF,
-                "Greenfield Heights Facilities",
-                "Work orders queue, update complaint status, log resolution notes"
-        ));
-        return accounts;
     }
 }
