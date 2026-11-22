@@ -24,42 +24,46 @@
 
 ---
 
-## 📸 Screenshots Gallery
+## 📸 Live Application Showcase
 
 <table align="center" width="100%">
   <tr>
     <td width="50%" align="center">
-      <img src="docs/screenshots/landing-page.png" alt="Public SaaS Landing Page" width="100%"/>
-      <br/><b>🌐 Public SaaS Landing Page</b>
+      <img src="./docs/screenshots/01-landing-page.png" alt="Public SaaS Landing Page" width="100%"/>
+      <br/><b>🌐 Public SaaS Marketing Landing Page</b>
     </td>
     <td width="50%" align="center">
-      <img src="docs/screenshots/guard-gate-console.png" alt="Security Guard Gate Console" width="100%"/>
-      <br/><b>🛡️ Security Guard Gate Console</b>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" align="center">
-      <img src="docs/screenshots/owner-dashboard.png" alt="Flat Owner Resident Portal" width="100%"/>
-      <br/><b>🏠 Flat Owner Resident Portal</b>
-    </td>
-    <td width="50%" align="center">
-      <img src="docs/screenshots/committee-finance-ledger.png" alt="Committee Financial Dues Ledger" width="100%"/>
-      <br/><b>📊 Committee Financial Collections & Dues</b>
+      <img src="./docs/screenshots/02-login-register.png" alt="Authentication Portal" width="100%"/>
+      <br/><b>🔐 Centralized Role-Based Sign In Portal</b>
     </td>
   </tr>
   <tr>
     <td width="50%" align="center">
-      <img src="docs/screenshots/staff-tasks-board.png" alt="Maintenance Technician Work Orders" width="100%"/>
-      <br/><b>🔧 Maintenance Technician Dispatch Queue</b>
+      <img src="./docs/screenshots/03-super-admin-dashboard.png" alt="Super Admin Dashboard" width="100%"/>
+      <br/><b>👑 Platform Super Admin Governance & Society Reviews</b>
     </td>
     <td width="50%" align="center">
-      <img src="docs/screenshots/owner-payment-receipt.png" alt="Digital Payment Receipt" width="100%"/>
-      <br/><b>🧾 Instant Digital Payment Receipt Modal</b>
+      <img src="./docs/screenshots/04-society-admin-dashboard.png" alt="Society Admin Workspace" width="100%"/>
+      <br/><b>🏢 Society Administrator Operations Workspace</b>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="./docs/screenshots/05-property-tree.png" alt="5-Tier Property Hierarchy" width="100%"/>
+      <br/><b>🏛️ 5-Tier Property Management (Buildings, Wings, Flats)</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="./docs/screenshots/06-resident-dashboard.png" alt="Resident Owner Invoices" width="100%"/>
+      <br/><b>🏠 Resident Portal — Maintenance Bills & Dues</b>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="./docs/screenshots/07-security-console.png" alt="Security Guard Gate Console" width="100%"/>
+      <br/><b>🛡️ Security Guard Perimeter Gate Console (6-Digit OTP Verification & Active Roster)</b>
     </td>
   </tr>
 </table>
-
-> *All UI screens can be dropped into the [`docs/screenshots/`](docs/screenshots/) folder as described in the [Screenshot Checklist](docs/USER_MANUAL.md#8-screenshot-checklist).*
 
 ---
 
