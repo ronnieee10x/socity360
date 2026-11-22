@@ -164,17 +164,17 @@ Everyone in a residential community has different responsibilities. Society360 g
 
 ```mermaid
 flowchart TD
-    User["👤 Resident / Frontline User (React 18 UI)"] -->|1. HTTP Request with Bearer JWT| Axios["Frontend Axios Client (api.ts)"]
-    Axios -->|2. POST /api/v1/...| SpringSec["Spring Security & JwtAuthenticationFilter"]
-    SpringSec -->|3. Validate Token Signature| TenantFilter["TenantContextFilter"]
-    TenantFilter -->|4. Store society_id safely| ThreadLocal["TenantContextHolder (ThreadLocal)"]
-    ThreadLocal -->|5. Forward request| Controller["REST Controller"]
-    Controller -->|6. Run business validation| Service["Domain Service Layer"]
-    Service -->|7. Tenant-aware query| Repository["Spring Data JPA Repository"]
-    Repository -->|8. SELECT/INSERT WHERE society_id = :id| Database[("Database (PostgreSQL 16 / H2)")]
-    Database -->|9. Isolated records returned| Service
-    Service -->|10. Formatted DTO response| Controller
-    Controller -->|11. JSON Response (HTTP 200 OK)| User
+    User["👤 Resident / Frontline User (React 18 UI)"] -->|"1. HTTP Request with Bearer JWT"| Axios["Frontend Axios Client (api.ts)"]
+    Axios -->|"2. POST /api/v1/..."| SpringSec["Spring Security & JwtAuthenticationFilter"]
+    SpringSec -->|"3. Validate Token Signature"| TenantFilter["TenantContextFilter"]
+    TenantFilter -->|"4. Store society_id safely"| ThreadLocal["TenantContextHolder (ThreadLocal)"]
+    ThreadLocal -->|"5. Forward request"| Controller["REST Controller"]
+    Controller -->|"6. Run business validation"| Service["Domain Service Layer"]
+    Service -->|"7. Tenant-aware query"| Repository["Spring Data JPA Repository"]
+    Repository -->|"8. SELECT/INSERT WHERE society_id = :id"| Database[("Database (PostgreSQL 16 / H2)")]
+    Database -->|"9. Isolated records returned"| Service
+    Service -->|"10. Formatted DTO response"| Controller
+    Controller -->|"11. JSON Response (HTTP 200 OK)"| User
 ```
 
 ### The 5 Simple Steps:
