@@ -398,7 +398,7 @@ This project was developed by the engineering team below. Feel free to connect w
 | **Rohan Sonwane** | Project Lead, Full-Stack Architect, Backend & Cybersecurity | [@ronnieee10x](https://github.com/ronnieee10x) |
 | **Mrunmayee Jadhav** | Frontend Lead, UI/UX Design, Integration & Cybersecurity | [@mrunmayee2113](https://github.com/mrunmayee2113) |
 | **Saksham Kale** | Manual Testing & Bug Reporting | [@SakshamKale](https://github.com/SakshamKale) |
-| **Teammate 4** | Technical Documentation & Report | yet to add |
+| **Samiksha Nagrale** | Technical Documentation & Report |[@samikshanagrale2724](https://github.com/samikshanagrale2724) |
 | **Teammate 5** | Requirement Gathering & Research | yet to add |
 | **Teammate 6** | Presentation & Project Coordination | yet to add |
 
